@@ -123,6 +123,7 @@ device = (
 )
 print(f"Using {device} device")
 
+# Basic NN
 class SimpleNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size):
         super(SimpleNN, self).__init__()
@@ -135,7 +136,8 @@ class SimpleNN(nn.Module):
         x = self.relu(x)
         x = self.fc2(x)
         return F.softmax(x, dim=1)
-
+    
+# More advnaced NN -> explores more complex neural network weights.
 class MultiClassNN(nn.Module):
     def __init__(self, input_size, hidden_size1, hidden_size2, num_classes, dropout_prob=0.2):
         super(MultiClassNN, self).__init__()
@@ -158,29 +160,6 @@ class MultiClassNN(nn.Module):
         return x
 
 
-
-# NN model -> ADVANCED
-class ImprovedNeuralNetwork(nn.Module):
-    def __init__(self):
-        super().__init__()
-        #self.flatten = nn.Flatten()
-        # self.linear_relu_stack = nn.Sequential(
-        #     nn.Linear(4*4, 29),
-        #     nn.ReLU(),
-        #     nn.Linear(29, 29),
-        #     nn.ReLU(),
-        #     nn.Linear(29, 16)
-        # )
-
-        self.hidden = nn.Linear(16, 29)
-        self.relu = nn.ReLU()
-        self.output = nn.Linear(29, 16)
-
-    def forward(self, x):
-        x = self.hidden(x)
-        x = self.relu(x)
-        x = self.output(x)
-        return x
 
 input_size = 29
 hidden_size = 64  # Adjust as needed
