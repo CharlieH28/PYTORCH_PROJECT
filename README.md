@@ -15,7 +15,7 @@ This pytorch algorithm shows the steps of developing a NN module that can predic
 - missing value replacements
 - sorting categorical columns
 
-### Torck Neural Networks modules 
+### Torch Neural Networks modules 
 
 - simpleNN
 - multiclassNN
